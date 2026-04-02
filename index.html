@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>John Memon</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.5;
+      color: #1a1a1a;
+      background: #fafafa;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+      background: #fff;
+      min-height: 100vh;
+    }
+
+    @media (min-width: 840px) {
+      body { background: #f0f0f0; }
+      .container {
+        margin: 32px auto;
+        min-height: auto;
+        border-radius: 2px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      }
+    }
+
+    /* Header */
+    header { text-align: center; margin-bottom: 32px; }
+    h1 { font-size: 28px; font-weight: 700; margin-bottom: 4px; }
+    .location { color: #666; font-size: 14px; margin-bottom: 6px; }
+    .contact { font-size: 14px; color: #444; margin-bottom: 6px; }
+    .contact a, .links a { color: #2563eb; text-decoration: underline; }
+    .links { font-size: 14px; }
+    .links a { margin: 0 6px; }
+
+    /* Sections */
+    h2 {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-bottom: 1.5px solid #333;
+      padding-bottom: 4px;
+      margin-top: 28px;
+      margin-bottom: 12px;
+    }
+
+    /* Experience entries */
+    .job { margin-bottom: 20px; }
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 2px;
+    }
+    .job-title { font-size: 15px; font-weight: 600; }
+    .job-date { font-size: 13px; color: #666; white-space: nowrap; }
+    .job-subtitle { font-size: 14px; font-weight: 600; margin-top: 8px; margin-bottom: 4px; }
+
+    ul { padding-left: 20px; margin: 4px 0 8px; }
+    li { margin-bottom: 4px; font-size: 14px; line-height: 1.45; }
+    li ul { margin-top: 4px; }
+
+    /* Summary */
+    .summary { font-size: 14px; line-height: 1.55; color: #333; }
+
+    /* Projects */
+    .project { margin-bottom: 8px; font-size: 14px; line-height: 1.45; }
+    .project strong { font-weight: 600; }
+
+    /* Education */
+    .education { font-size: 14px; line-height: 1.5; }
+
+    /* Skills */
+    .skills { font-size: 14px; line-height: 1.6; }
+    .skills strong { font-weight: 600; }
+
+    code {
+      font-family: "SF Mono", "Fira Code", monospace;
+      font-size: 12px;
+      background: #f5f5f5;
+      padding: 1px 4px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>John Memon</h1>
+      <div class="location">New York, NY</div>
+      <div class="contact">
+        <a href="mailto:johnpmemon@gmail.com">johnpmemon@gmail.com</a>
+      </div>
+      <div class="links">
+        <a href="https://www.linkedin.com/in/jp-memon/">LinkedIn</a>
+        <a href="https://github.com/Jmemon">GitHub</a>
+        <a href="https://huggingface.co/jmemon">HuggingFace</a>
+      </div>
+    </header>
+
+    <h2>Summary</h2>
+    <p class="summary">
+      AI engineer comfortable with autonomy, ownership, and thinking on his feet. Involved with machine learning since ~2015. Owns client problems end-to-end — from discovery calls through delivery. Goes into ambiguity and finds the real problem underneath — reads between the lines, asks the right questions, develops a sense for what's actually being solved even when stakeholders can't state it directly. Strong communicator with both technical and non-technical people. Outside of work plays guitar and is learning to draw.
+    </p>
+
+    <h2>Experience</h2>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">All In On Data — AI Engineer</span>
+        <span class="job-date">Jul 2024 – Mar 2026</span>
+      </div>
+
+      <div class="job-subtitle">Autolog – AI-Powered Knowledge Acquisition Platform</div>
+      <ul>
+        <li>Designed a speech-AI-based consulting platform to fill the niche between expensive-to-conduct interviews and overly-rigid low-response surveys, capturing qualitative data at scale; architected and shipped 130K lines as sole engineer (complete ownership of architecture, implementation, deployment, and QA), heavily leveraging multi-agent orchestration with custom skills for coding — DAG-based real-time processing with streaming STT (Deepgram Flux), dual-process agent architecture (Analyst reasoning + Conversationalist generation), WebRTC relay, session persistence, and artifact storage on Cloudflare R2</li>
+      </ul>
+
+      <div class="job-subtitle">Client Engagements — Discovery Through Delivery</div>
+      <ul>
+        <li><strong>Bookmarked (Content Moderation)</strong>: Owned engagement from discovery through delivery — presented technical vision to stakeholder and got buy-in on approach; evaluated 5 models and datasets by annotation methodology and coverage, selecting training mix based on product requirements (detecting implicit patterns, not just explicit violations); fine-tuned LlamaGuard 3 8B with LoRA adapters using DeepSpeed ZeRO Stage 3 on a single L4 GPU; built text extraction and sentence tokenization pipeline (nltk) for running full client dataset through classification; delivered technical recommendations report with model comparisons and deployment path; clean project handoff
+          <ul>
+            <li>Resolved OOM failures by building CUDA memory profiling utilities (<code>torch.cuda.memory</code> snapshots) and tuning DeepSpeed parameters (persistence thresholds, prefetch bucket sizes, gradient checkpointing, pinned memory offloading); instrumented training with NVTX markers for GPU timeline analysis</li>
+          </ul>
+        </li>
+        <li><strong>Innova (LLM Agent)</strong>: Led engagement through regular status meetings — studied the client's repair workflow and "golden sample" to build domain understanding; built auto-repair instruction agent (YouTube transcripts + automotive sources → LLM → aggregated instructions) with Python web app; LangChain structured output parsing with retry logic; delivered working demos to internal stakeholders; deployed on AWS with nginx/gunicorn; obtained Google Cloud Professional certification during engagement</li>
+        <li><strong>Hannagriff (Computer Vision)</strong>: Owned engagement from requirements through client handoff — set honest expectations by scoping deliverable as POC after assessing technical feasibility; built end-to-end scantron grading pipeline — MSER extraction, DBSCAN clustering, vector field-guided grid drawing, CNN classification (20K hand-labeled samples, macro F1 with oversampling for class imbalance) — iterating through 5+ algorithmic approaches before converging; developed an agentic autoresearch loop for developing data labeling heuristics; Python, OpenCV, scikit-learn, Shapely; deployed on AWS EC2 with S3 integration and client handoff</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Philips — ML Engineering Co-op</span>
+        <span class="job-date">Jan – Aug 2023</span>
+      </div>
+      <ul>
+        <li>Enabled clinician understanding of model reasoning for prenatal care decisions — built interpretability pipeline (LIME, CAM, HiResCAM) for a ResNet50+Attention gestational age model on prenatal ultrasound video — generated heatmaps across 300+ clinical exams for sonographer review; delivered findings through formal scientific presentation to the research team
+          <ul>
+            <li>Forked scikit-image to modify quickshift++ segmentation in Cython (C/Python) for domain-specific superpixel constraints</li>
+            <li>Trained ridge regression interpretability models with NumPy on superpixel features</li>
+          </ul>
+        </li>
+        <li>Prototyped 3 architectures for multiple gestation classification — retrained attention on GA ResNet, GA+YOLO feature ensemble, MobileNet with custom attention — diagnosed overfitting and pivoted to feature-engineered classical ML with SQL feature store with automated extraction; comprehensive experiment tracking (metrics, hyperparams, git provenance)</li>
+        <li>Designed Stable Diffusion fine-tuning pipeline for synthetic ultrasound video generation across two clinical study datasets (note: did not implement)</li>
+      </ul>
+    </div>
+
+    <h2>Projects</h2>
+    <div class="project"><strong>Coding Harness for Claude Code</strong>: Built worktree-scoped deployment infrastructure enabling multiple versions of a full-stack application to run simultaneously in isolated git worktrees — each with its own ephemeral observability stack (Loki, Prometheus), direct application interaction via Chrome DevTools Protocol, and an array of custom agent skills for structured navigation, auditing, and debugging</div>
+    <div class="project"><strong>Abstruct</strong>: An agentic platform for people who naturally accumulate eclectic assortments of ideas from disparate domains and synthesize their own conclusions from them — Socratic recall sessions using FSRS scheduling, real-time voice input (Deepgram Nova-2), continuous LLM evaluation, and tree-structured conversation branching; currently designing a handheld companion device (Raspberry Pi Zero 2W, e-ink display, camera OCR, MEMS microphone) for facilitating collection of quotes coupled with user-commentary</div>
+    <div class="project"><strong>Fuel-Code</strong>: Developer productivity platform built on deep understanding of Claude Code internals — models the full agent lifecycle (sub-agents, teams, skills, worktrees, permission modes) to preserve session transcripts and enable developers to reuse and iterate on productive sessions</div>
+    <div class="project"><strong>Arxiver</strong>: RAG-LLM research tool that spins up expert chatbots in user-specified domains</div>
+    <div class="project"><strong>CUDA Deep Learning</strong>: Neural network training and inference accelerator built from scratch in CUDA and C++</div>
+
+    <h2>Education</h2>
+    <div class="education">
+      <strong>Northeastern University</strong> — BS Mathematics, Cum Laude, 3.70 GPA<br>
+      Eta Kappa Nu — EECE Honors Society<br>
+      Coursework: Machine Learning, Probability, Linear Algebra, Real Analysis, Group Theory, Algorithms, Computer Systems, Theory of Computation<br>
+      <strong>Certification</strong>: Google Cloud Professional (Oct 2025)
+    </div>
+
+    <h2>Skills</h2>
+    <div class="skills">
+      <strong>Languages:</strong> Python (NumPy, Cython, scikit-learn, nltk, pytest), TypeScript, SQL, C/C++, CUDA<br>
+      <strong>AI/ML:</strong> PyTorch, PyTorch Lightning, LangChain, Anthropic SDK, DeepSpeed ZeRO, LoRA/PEFT, OpenCV, scikit-learn, Deepgram<br>
+      <strong>Infrastructure:</strong> Docker, Redis, PostgreSQL, AWS (EC2/S3/EBS), Supabase, Cloudflare R2, nginx<br>
+      <strong>Web:</strong> React, Hono, Express, Bun, WebSocket, WebRTC, Chrome DevTools Protocol<br>
+      <strong>Tools:</strong> Git, Linux CLI, Turborepo, Drizzle ORM
+    </div>
+  </div>
+</body>
+</html>
