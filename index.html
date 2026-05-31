@@ -110,7 +110,7 @@
 
     <h2>Summary</h2>
     <p class="summary">
-      Personable and creative problem solver. Nothing is too difficult, the question is only finding the path. Working with computers since he was 15, has strong knowledge and intuition for computer systems and especially AI/ML. Outside of work enjoys spending time with loved ones, playing guitar, and being active.
+      AI/ML engineer specializing in applied GenAI systems, multi-agent orchestration, and GPU-level performance work. Takes ambiguous problems to shipped products as sole owner, with depth across computer vision, NLP, real-time systems, and model interpretability.
     </p>
 
     <h2>Experience</h2>
@@ -118,27 +118,27 @@
     <div class="job">
       <div class="job-header">
         <span class="job-title">All In On Data — AI Engineer</span>
-        <span class="job-date">Jul 2024 – Mar 2026</span>
+        <span class="job-date">Jul 2024 – Current</span>
       </div>
 
       <div class="job-subtitle">Autolog – AI-Powered Knowledge Acquisition Platform</div>
       <ul>
-        <li>Designed a speech-AI-based consulting platform to fill the niche between expensive-to-conduct interviews and overly-rigid low-response surveys, capturing qualitative data at scale; architected and shipped 130K lines as sole engineer (complete ownership of architecture, implementation, deployment, and QA), heavily leveraging multi-agent orchestration with custom skills for coding — DAG-based real-time processing with streaming STT (Deepgram Flux), dual-process agent architecture (Analyst reasoning + Conversationalist generation), WebRTC relay, session persistence, and artifact storage on Cloudflare R2
+        <li>Architected and shipped a 130K-line production AI platform as sole engineer with full ownership — designed to bridge the gap between low-response-rate structured surveys and costly in-person interviews. Built on multi-agent orchestration with a dual-process architecture (Analyst reasoning + Conversationalist generation), DAG-based real-time processing, streaming speech-to-text (Deepgram Flux), a WebRTC relay, session persistence, and artifact storage on Cloudflare R2
           <ul>
-            <li><strong>Coding Harness</strong>: worktree-scoped ephemeral observability stack (Loki/Promtail/Prometheus via Docker Compose), Chrome DevTools Protocol automation (screencast recording, console capture, audio injection), structured Pino logging, and a custom skill library for navigation, audit, and implementation-review</li>
+            <li><strong>Coding Harness</strong>: accelerated AI-assisted development with a worktree-scoped, ephemeral observability stack (Loki/Promtail/Prometheus via Docker Compose), Chrome DevTools Protocol automation (screencast recording, console capture, audio injection), structured Pino logging, and a custom skill library for navigation, audit, and implementation-review</li>
           </ul>
         </li>
       </ul>
 
-      <div class="job-subtitle">Client Engagements — Discovery Through Delivery</div>
+      <div class="job-subtitle">Client Engagements — Pre-Sales · Technical Advisory and Delivery</div>
       <ul>
-        <li><strong>Bookmarked (Content Moderation)</strong>: Owned engagement from discovery through delivery — presented technical vision to stakeholder and got buy-in on approach; evaluated 5 models and datasets by annotation methodology and coverage, selecting training mix based on product requirements (detecting implicit patterns, not just explicit violations); fine-tuned LlamaGuard 3 8B with LoRA adapters using DeepSpeed ZeRO Stage 3 on a single L4 GPU; built text extraction and sentence tokenization pipeline (nltk) for running full client dataset through classification; delivered technical recommendations report with model comparisons and deployment path; clean project handoff
+        <li><strong>Bookmarked (Content Moderation)</strong>: Fine-tuned LlamaGuard 3 8B with LoRA adapters for a client moderation product; evaluated 5 candidate datasets by annotation methodology and coverage, then selected a training mix targeting implicit-pattern detection rather than explicit violations alone. Built an nltk text-extraction and sentence-tokenization pipeline to classify the full client dataset, and delivered a technical recommendations report with model comparisons and a deployment path
           <ul>
-            <li>Resolved OOM failures by building CUDA memory profiling utilities (<code>torch.cuda.memory</code> snapshots) and tuning DeepSpeed parameters (persistence thresholds, prefetch bucket sizes, gradient checkpointing, pinned memory offloading); instrumented training with NVTX markers for GPU timeline analysis</li>
+            <li>Fit a ~50GB model onto a single 24GB L4 GPU — removing the need for multi-GPU infrastructure — by building CUDA memory-profiling utilities (<code>torch.cuda.memory</code> snapshots) and tuning DeepSpeed ZeRO Stage 3 (persistence thresholds, prefetch bucket sizes, gradient checkpointing, pinned-memory offloading); instrumented training with NVTX markers for GPU-timeline analysis</li>
           </ul>
         </li>
-        <li><strong>Innova (LLM Agent)</strong>: Led engagement through regular status meetings — studied the client's repair workflow and "golden sample" to build domain understanding; built auto-repair instruction agent (YouTube transcripts + automotive sources → LLM → aggregated instructions) with Python web app; LangChain structured output parsing with retry logic; delivered working demos to internal stakeholders; deployed on AWS with nginx/gunicorn; obtained Google Cloud Professional certification during engagement</li>
-        <li><strong>Hannagriff (Computer Vision)</strong>: Owned engagement from requirements through client handoff — set honest expectations by scoping deliverable as POC after assessing technical feasibility; built end-to-end scantron grading pipeline — MSER extraction, DBSCAN clustering, vector field-guided grid drawing, CNN classification (20K hand-labeled samples, macro F1 with oversampling for class imbalance) — iterating through 5+ algorithmic approaches before converging; developed an agentic autoresearch loop for developing data labeling heuristics; Python, OpenCV, scikit-learn, Shapely; deployed on AWS EC2 with S3 integration and client handoff</li>
+        <li><strong>Innova (LLM Agent)</strong>: Built an auto-repair instruction agent that aggregates YouTube transcripts and other automotive sources into step-by-step repair guidance, with a Python web app for internal demos and LangChain structured-output parsing with retry logic. Deployed on AWS with nginx/gunicorn; earned Google Cloud Professional certification during the engagement</li>
+        <li><strong>Hannagriff (Computer Vision)</strong>: Built an end-to-end scantron-grading pipeline — MSER extraction, DBSCAN clustering, vector-field-guided grid drawing, and CNN classification trained on 20K hand-labeled samples (evaluated by macro-F1, with oversampling to address class imbalance) — converging after iterating through 5+ algorithmic approaches. Developed an agentic auto-research loop to refine data-labeling heuristics; built with Python, OpenCV, scikit-learn, and Shapely; deployed on AWS EC2 with S3 integration and handed off to the client</li>
       </ul>
     </div>
 
@@ -148,14 +148,10 @@
         <span class="job-date">Jan – Aug 2023</span>
       </div>
       <ul>
-        <li>Enabled clinician understanding of model reasoning for prenatal care decisions — built interpretability pipeline (LIME, CAM, HiResCAM) for a ResNet50+Attention gestational age model on prenatal ultrasound video — generated heatmaps across 300+ clinical exams for sonographer review; delivered findings through formal scientific presentation to the research team
-          <ul>
-            <li>Forked scikit-image to modify quickshift++ segmentation in Cython (C/Python) for domain-specific superpixel constraints</li>
-            <li>Trained ridge regression interpretability models with NumPy on superpixel features</li>
-          </ul>
-        </li>
-        <li>Prototyped 3 architectures for multiple gestation classification — retrained attention on GA ResNet, GA+YOLO feature ensemble, MobileNet with custom attention — diagnosed overfitting and pivoted to feature-engineered classical ML with SQL feature store with automated extraction; comprehensive experiment tracking (metrics, hyperparams, git provenance)</li>
-        <li>Designed Stable Diffusion fine-tuning pipeline for synthetic ultrasound video generation across two clinical study datasets (note: did not implement)</li>
+        <li>Built an interpretability pipeline (LIME, CAM, HiResCAM) for a ResNet50+Attention gestational-age model on prenatal ultrasound video, enabling clinicians to understand the model's reasoning behind prenatal-care decisions; generated heatmaps across 300+ clinical exams for sonographer review</li>
+        <li>Forked scikit-image to modify quickshift++ segmentation in Cython for domain-specific superpixel constraints, then trained ridge-regression interpretability models (NumPy) on the resulting superpixel features</li>
+        <li>Prototyped 3 architectures for multiple-gestation classification (attention retrained on the GA ResNet, a GA+YOLO feature ensemble, and MobileNet with custom attention); diagnosed overfitting and pivoted to feature-engineered classical ML backed by a SQL feature store with automated extraction, with full experiment tracking (metrics, hyperparameters, git provenance), delivered as a formal scientific presentation</li>
+        <li>Designed (but did not build) a Stable Diffusion fine-tuning pipeline for synthetic ultrasound-video generation across two clinical study datasets</li>
       </ul>
     </div>
 
@@ -165,7 +161,7 @@
         <span class="job-date">Sep 2022 – Jan 2023</span>
       </div>
       <ul>
-        <li>Built a test suite for a data ETL pipeline processing smartphone data using pytest</li>
+        <li>Built a pytest test suite for a data ETL pipeline processing smartphone data</li>
       </ul>
     </div>
 
@@ -175,15 +171,18 @@
         <span class="job-date">Jan – Jun 2022</span>
       </div>
       <ul>
-        <li>Reverse-engineered a legacy statistical model for military airdrop systems — rebuilt understanding of undocumented algorithm utilizing probability and linear algebra fundamentals; trusted by the team to work independently with minimal oversight</li>
+        <li>Reverse-engineered a legacy, linear-algebra-based statistical model for military airdrop systems — rebuilding the understanding of an undocumented algorithm from probability and linear-algebra fundamentals, and earning the trust of the team</li>
       </ul>
     </div>
 
     <h2>Projects</h2>
-    <div class="project"><strong>Abstruct</strong>: An agentic platform for people who naturally accumulate eclectic assortments of ideas from disparate domains and synthesize their own conclusions from them — Socratic recall sessions using FSRS scheduling, real-time voice input (Deepgram Nova-2), continuous LLM evaluation, and tree-structured conversation branching; currently designing a handheld companion device (Raspberry Pi Zero 2W, e-ink display, camera OCR, MEMS microphone) for facilitating collection of quotes coupled with user-commentary</div>
-    <div class="project"><strong>Fuel-Code</strong>: Developer productivity platform built on deep understanding of Claude Code internals — models the full agent lifecycle (sub-agents, teams, skills, worktrees, permission modes) to preserve session transcripts and enable developers to reuse and iterate on productive sessions</div>
+    <div class="project"><strong>Abstruct</strong>: An AI-enabled UX for memorization and concept engagement that turns ideas into content — GenAI-powered Socratic recall using FSRS scheduling, real-time voice input (Deepgram Nova-2), continuous LLM evaluation, and tree-structured conversation branching; currently designing a handheld companion device (Raspberry Pi Zero 2W, e-ink display, camera OCR, MEMS microphone) for screen-free capture of primary-source material with user commentary</div>
+    <div class="project"><strong>Fuel-Code</strong>: Developer-productivity platform built on a deep understanding of Claude Code internals — models the full agent lifecycle (sub-agents, teams, skills, worktrees, permission modes) to preserve session transcripts and let developers reuse and iterate on productive sessions</div>
     <div class="project"><strong>Arxiver</strong>: RAG-LLM research tool that spins up expert chatbots in user-specified domains</div>
     <div class="project"><strong>CUDA Deep Learning</strong>: From-scratch neural network in CUDA and C++ — hand-written kernels for matrix ops, activations, and losses; forward + backward passes on-device; multi-architecture builds via Makefile fat binaries targeting Volta (<code>sm_70</code>) and Pascal (<code>sm_61</code>)</div>
+    <div class="project"><strong>SimpleProcessor</strong>: Designed and simulated a custom CPU in Verilog with a C++ test harness — implemented the full instruction fetch/decode/execute pipeline, register file, and ALU, working hands-on across the hardware-software boundary</div>
+    <div class="project"><strong>MemoryAllocator</strong>: Custom memory allocator in C — free-list management, <code>sbrk</code>/<code>mmap</code>-backed regions, and fragmentation analysis, validated by a dedicated test harness; performance-critical low-level memory work</div>
+    <div class="project"><strong>NUFileSystem</strong>: FUSE-based filesystem in C — block allocation, inode tables, and directory-tree traversal implementing the POSIX interface, with a full test suite covering the syscall surface</div>
 
     <h2>Education</h2>
     <div class="education">
@@ -195,13 +194,17 @@
 
     <h2>Skills</h2>
     <div class="skills">
-      <strong>Languages:</strong> Python (NumPy, Cython, scikit-learn, nltk, pytest), TypeScript, SQL, C/C++, CUDA, Verilog/HDL, Go<br>
-      <strong>AI/ML:</strong> PyTorch, PyTorch Lightning, LangChain, Anthropic SDK, MCP, DeepSpeed ZeRO, LoRA/PEFT, OpenCV, scikit-learn, Deepgram<br>
+      <strong>Languages:</strong> Python, TypeScript, SQL, C/C++, CUDA, Verilog/HDL, Go<br>
+      <strong>AI/ML:</strong> PyTorch, PyTorch Lightning, LangChain, Anthropic SDK, MCP, DeepSpeed ZeRO, LoRA/PEFT, OpenCV, scikit-learn, NumPy, Cython, nltk, Deepgram<br>
       <strong>Systems &amp; Performance:</strong> Custom CUDA kernels, multi-architecture GPU builds (Volta/Pascal), manual memory management, FUSE-style filesystems, processor / HDL design, real-time streaming pipelines, low-latency WebSocket / WebRTC protocols<br>
       <strong>Infrastructure:</strong> Docker, Redis, PostgreSQL, AWS (EC2/S3/EBS), Supabase, Cloudflare R2, nginx, Railway, Vercel<br>
       <strong>Web &amp; Real-Time:</strong> React, Hono, Express, Bun, WebSocket, WebRTC, Chrome DevTools Protocol, Server-Sent Events<br>
-      <strong>Observability &amp; Tooling:</strong> Prometheus, Loki/Promtail, Pino structured logging, NVTX, <code>torch.cuda.memory</code> profiling, Turborepo, Drizzle ORM, Git
+      <strong>Observability &amp; Tooling:</strong> Prometheus, Loki/Promtail, Pino structured logging, NVTX, <code>torch.cuda.memory</code> profiling, Turborepo, Drizzle ORM, Git, pytest
     </div>
+
+    <p class="summary" style="margin-top: 20px; font-style: italic; color: #666;">
+      Interests: Guitar, staying active, time with loved ones.
+    </p>
   </div>
 </body>
 </html>
